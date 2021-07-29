@@ -768,6 +768,7 @@ html.is-locked {
 }
 .contacts-block__input input {
   text-align: center;
+  background-color: #fff;
 }
 .contacts-block__btn-subscribe {
   width: 100%;
@@ -1289,6 +1290,9 @@ html.is-locked {
         flex: 1 1 auto;
     margin-bottom: 0;
     margin-right: 25px;
+  }
+  .contacts-block__input input {
+    text-align: left;
   }
   .contacts-block__btn-subscribe {
     max-width: 250px;
