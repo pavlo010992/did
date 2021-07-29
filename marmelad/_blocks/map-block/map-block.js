@@ -41,6 +41,7 @@ function init() {
 
             myMap.geoObjects.add(new ymaps.Placemark(coords, {
                 zoom: 7,
+                balloonContent: address
             }, {
                 iconLayout: 'default#image',
                 iconImageHref: "../img/map-ballon.svg",
