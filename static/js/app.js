@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 /* ^^^
@@ -87,6 +89,62 @@ $(function () {
     }, 600);
     $('.mobile-box').removeClass('opened');
   });
+
+  function yaMapInit() {
+    if (typeof ymaps === "undefined" ? "undefined" : _typeof(ymaps)) {
+      // Как только будет загружен API и готов DOM, выполняем инициализацию
+      init();
+      clearInterval(yaMapInterval);
+    }
+  }
+
+  var yaMapInterval = setInterval(yaMapInit, 1000); // Инициализация и уничтожение карты при нажатии на кнопку.
+
+  function init() {
+    if (!$('.map-block__map').length) {
+      return;
+    }
+
+    var mapCount = 0;
+    $('.map-block__map').each(function () {
+      var myMap;
+      var mapid = 'map' + mapCount;
+      $(this).attr('id', mapid);
+      var activeItem = $(this);
+      var center = activeItem.data('center').split(',');
+      var address = activeItem.data('address');
+      var dopAddress = activeItem.data('dopadress');
+      var zoom = activeItem.data('zoom'); // Создание карты.
+
+      var myMap = new ymaps.Map(mapid, {
+        center: center,
+        zoom: 7,
+        controls: []
+      });
+      var coords;
+      dopAddress.forEach(function (item, i, arr) {
+        coords = item.coordinates.split(',');
+        var dopAdd = item.adress;
+        myMap.geoObjects.add(new ymaps.Placemark(coords, {
+          zoom: 7
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: "../img/map-ballon.svg",
+          iconImageSize: [55, 55],
+          iconImageOffset: [-27, -27]
+        }));
+      });
+
+      if (dopAddress.length < 2) {
+        myMap.setCenter(coords, zoom);
+      } else {
+        myMap.setBounds(myMap.geoObjects.getBounds());
+      }
+
+      mapCount = mapCount + 1;
+    });
+  }
+
   var PAGE = $('html, body');
   var pageScroller = $('.page-scroller');
   var inMemoryClass = 'page-scroller--memorized';
