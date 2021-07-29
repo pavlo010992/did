@@ -72,6 +72,21 @@ $(function () {
     return $(selector).length > 0;
   };
 
+  $('.navigation-link').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this),
+        id = $this.attr('href');
+
+    if (!$(id).length) {
+      return;
+    }
+
+    var offsetTop = $(id).offset().top;
+    $('html, body').animate({
+      scrollTop: offsetTop
+    }, 600);
+    $('.mobile-box').removeClass('opened');
+  });
   var PAGE = $('html, body');
   var pageScroller = $('.page-scroller');
   var inMemoryClass = 'page-scroller--memorized';
