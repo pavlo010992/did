@@ -1174,13 +1174,13 @@ html.is-locked {
 .sign-up-block__inner:before {
   content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background-image: url("../img/pattern-su.svg");
+  bottom: -190px;
+  left: 70%;
+  background-image: url("../img/about-bg.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-  width: 100%;
-  height: 275px;
+  width: 905px;
+  height: 460px;
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1);
   background-size: contain;
@@ -1308,7 +1308,18 @@ html.is-locked {
     margin-right: 50px;
   }
   .sign-up-block__inner {
-    border-radius: none;
+    border-radius: 0;
+  }
+  .sign-up-block__inner:before {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .sign-up-block__inner:after {
+    background-image: url("../img/about-bg.svg");
+    left: 70%;
+    bottom: -210px;
+    width: 905px;
+    height: 460px;
   }
   .sign-up-block__title {
     width: 550px;
@@ -1511,6 +1522,29 @@ html.is-locked {
   .sign-up-block__inner {
     padding-top: 105px;
     padding-bottom: 115px;
+  }
+  .sign-up-block__inner:after {
+    width: 1573px;
+    height: 799px;
+    bottom: -325px;
+    left: 63%;
+  }
+  .sign-up-block__title {
+    margin-bottom: 65px;
+  }
+  .sign-up-block__btn-sign-up {
+    font-size: 24px;
+    padding: 40px 50px;
+    border-radius: 0px 50px 50px 50px;
+  }
+}
+@media (min-width: 1280px) {
+  .sign-up-block__inner:before {
+    width: 1573px;
+    height: 799px;
+    right: 89%;
+    bottom: -325px;
+    left: auto;
   }
 }
 @media (min-width: 1360px) {
