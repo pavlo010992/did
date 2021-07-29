@@ -1,0 +1,87 @@
+.mobile-box
+  position fixed
+  left 0
+  right 0
+  top 61px
+  bottom 0
+  visibility hidden
+  transition all .3s ease
+  transform translateY(-100%)
+
+  @media (min-width: $desc)
+    top 92px
+
+  @media (min-width: 1360px)
+    display none
+
+  &.opened
+    @media (max-width: 1359px)
+      opacity 1
+      visibility visible
+      z-index 49
+      transform translateY(0)
+
+
+  &__inner
+    height 100%
+    max-height 100%
+    overflow auto
+    background $color1
+    padding 17px 10px 40px
+    transition all .3s ease
+    box-shadow 0px 1px 2px rgba(0, 0, 0, 0.25)
+    display flex
+    flex-direction column
+
+
+  &__navigation
+    margin-bottom 60px
+    text-align center
+    flex 1 0 auto
+    display flex
+    align-items center
+    justify-content center
+    ul
+      padding 0
+      margin 0
+      list-style none
+      font-size 0
+      line-height 1
+
+    > ul
+      > li
+        > a
+          display inline-block
+          text-decoration none
+          color #fff
+          font-size 14px
+          line-height 1.4
+          padding 10px 0
+
+          &:hover
+            text-decoration underline
+
+          @media (min-width: $desc)
+            font-size 18px
+
+  &__phone
+    font-size 18px
+    color #fff
+    font-weight 600
+    letter-spacing 0.08em
+    margin-bottom 7px
+    text-align center
+
+  &__mail
+    text-align center
+    a
+      color #9681F2
+      font-size 18px
+      font-weight 600
+      letter-spacing 0.08em
+
+  &__dop-logo
+    display block
+    text-align right
+    width 142px
+    margin 50px auto 0

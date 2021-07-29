@@ -1,1 +1,36 @@
-<div block="hero-block"></div><!-- hero-block -->
+<div block="hero-block">
+	<div elem="big-wrapper">
+		<div elem="navigation">
+			<ul>
+				{% for item in menu %}
+					<li>
+						<a href="{{item.href}}" class="navigation-link">{{item.name}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div elem="inner" class="site-width">
+			<div elem="head">
+				<div elem="image">
+					<img src="img/hero-image.svg" alt="">
+				</div>
+				<div elem="description" >Форум о цифровой трансофрмации в образовании, бизнесе и госуправлении</div>
+			</div>
+			<div elem="body">
+				<div elem="information">
+					<div elem="information-item">
+						<span>когда</span>
+						2—4 декабря
+					</div>
+					<div elem="information-item">
+						<span>где</span>
+						Иннополис
+					</div>
+				</div>
+				<div elem="button">
+					<a href="#" class="site-btn site-btn--1">Участвовать</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- hero-block -->
