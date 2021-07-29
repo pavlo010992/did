@@ -1,9 +1,38 @@
 <header block="app-header">
-    <div elem="content" mix="block:container">
-        <h1 class="display-4">
-            {{ app.package.name | capitalize}} v{{ app.package.version }}
-        </h1>
-        <p class="lead">Bootstrap {{ app.settings.app.bts[app.settings.app.bts.use].code }}</p>
-        <hr>
-    </div>
+	<div elem="inner">
+		<div elem="left">
+			<button elem="burger"></button>
+			<div elem="logo">
+				<img src="img/logo.svg" alt="">
+			</div>
+		</div>
+		<div elem="middle">
+			<div elem="contacts">
+				<div elem="phone">
+					<a href="tel:88004572200" class="phone">8 800 457 22 00</a>
+				</div>
+				<div elem="mail">
+					<a href="mailto:did@innopolis.ru">did@innopolis.ru</a>
+				</div>
+			</div>
+			<div elem="dop-logo">
+				<img src="img/logo2.svg" alt="">
+			</div>
+		</div>
+		<div elem="right">
+			<div elem="language">
+				<div elem="language-title">ENG</div>
+				<div elem="language-body">
+					<a elem="language-item" class="active" href="#">ENG</a>
+					<a elem="language-item" href="#">РУС</a>
+				</div>
+			</div>
+			<div elem="spec-page">
+				<a href="#"></a>
+			</div>
+			<div elem="cabinet">
+				<a href="#" class="site-btn site-btn--1">Войти</a>
+			</div>
+		</div>
+	</div>
 </header><!-- b:app-header -->

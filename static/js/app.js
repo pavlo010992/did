@@ -80,14 +80,31 @@ $(function () {
         id = $this.attr('href');
 
     if (!$(id).length) {
-      return;
+      return false;
     }
 
     var offsetTop = $(id).offset().top;
+    $('html').removeClass('is-locked');
+    $('.mobile-box, .app-header__burger').removeClass('opened');
     $('html, body').animate({
       scrollTop: offsetTop
     }, 600);
-    $('.mobile-box').removeClass('opened');
+  });
+  $('.app-header__language-title').on('click', function (e) {
+    e.preventDefault();
+    $(this).closest('.app-header__language').find('.app-header__language-body').slideToggle(400);
+  });
+  $('.app-header__language-item').on('click', function (e) {
+    var name = $(this).text(),
+        parrent = $(this).closest('.app-header__language');
+    parrent.find('.app-header__language-item').removeClass('active');
+    parrent.find('.app-header__language-title').text(name);
+    $(this).addClass('active');
+    parrent.find('.app-header__language-body').slideToggle(400);
+  });
+  $('.faq-block__item-title, .faq-block__item-icon').on('click', function (e) {
+    e.preventDefault();
+    $(this).closest('.faq-block__item').toggleClass('opened'); // $(this).closest('.faq-block__item').find('.faq-block__item-body').slideToggle(400);
   });
 
   function yaMapInit() {
@@ -142,6 +159,32 @@ $(function () {
       }
 
       mapCount = mapCount + 1;
+    });
+  }
+
+  $('.app-header__burger').on('click', function (e) {
+    e.preventDefault();
+    $('html').toggleClass('is-locked');
+    $('.mobile-box, .app-header__burger').toggleClass('opened'); // $('.app-header__top-pannel.fixed').removeClass('fixed');
+    // $('.app-header').css('paddingTop', '');
+  });
+
+  if ($('.news-block__list').length) {
+    var sliderMainText = tns({
+      "container": '.news-block__list',
+      "nav": false,
+      "gutter": 0,
+      "items": 1,
+      "loop": true,
+      "controlsContainer": ".news-block__slider-nav",
+      "axis": "horizontal",
+      "mouseDrag": false,
+      "responsive": {
+        "767": {
+          "gutter": 110,
+          "items": 2
+        }
+      }
     });
   }
 

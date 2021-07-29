@@ -1,0 +1,26 @@
+<div block="mobile-box">
+	<div elem="inner">
+		<div elem="navigation">
+			<ul>
+				{% for item in menu %}
+					<li>
+						<a href="{{item.href}}" class="navigation-link">{{item.name}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div elem="bottom">
+			<div elem="contacts">
+				<div elem="phone">
+					<a href="tel:88004572200" class="phone">8 800 457 22 00</a>
+				</div>
+				<div elem="mail">
+					<a href="mailto:did@innopolis.ru">did@innopolis.ru</a>
+				</div>
+			</div>
+			<div elem="dop-logo">
+				<img src="img/logo2.svg" alt="">
+			</div>
+		</div>
+	</div>
+</div><!-- mobile-box -->

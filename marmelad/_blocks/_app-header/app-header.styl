@@ -1,2 +1,248 @@
 .app-header
   flex none
+  background $color1
+  border-bottom 1px solid rgba(255,255,255, .1)
+  z-index 50
+  @media (min-width: $desc)
+    border none
+
+  &__inner
+    max-width 1580px
+    padding 10px 20px
+    margin 0 auto
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-between
+    @media (min-width: $desc)
+      padding 26px 20px
+
+  &__middle
+    display none
+    @media (min-width: $tablet)
+      display flex
+      align-items center
+      flex 1 1 0
+      margin-right 20px
+    @media (min-width: $desc)
+      max-width 790px
+
+  &__left
+    display flex
+    align-items center
+    flex 0 0 93px
+    margin-right 15px
+    font-size 0
+    line-height 1
+    @media (min-width: $tablet)
+      flex 0 0 auto
+
+  &__right
+    flex 0 0 auto
+    display flex
+    align-items center
+    line-height 1
+    font-size 0
+
+  &__logo
+    flex 0 0 54px
+    @media (min-width: $desc)
+      flex 0 0 64px
+
+  &__burger
+    background none
+    border none
+    box-shadow none
+    position relative
+    display block
+    width 24px
+    height 24px
+    padding 0
+    cursor pointer
+    margin-right 15px
+    margin-left -4px
+
+    &.opened
+      &:before
+        border none
+        height 2px
+        background $color2
+        transform rotate(45deg)
+        margin-top 0
+
+      &:after
+        transform rotate(-45deg)
+        margin-top 0
+
+
+    @media (min-width: 1360px)
+      display none
+
+    &:before
+      content ""
+      position absolute
+      left 50%
+      top 50%
+      height 12px
+      width 16px
+      border 2px solid $color2
+      border-left none
+      border-right none
+      margin-top -6px
+      margin-left -8px
+      transition all .3s ease
+
+    &:after
+      content ""
+      position absolute
+      left 50%
+      top 50%
+      height 2px
+      width 16px
+      margin-left -8px
+      margin-top -1px
+      background $color2
+      transition all .3s ease
+
+  &__cabinet
+    flex 0 0 40px
+    .site-btn
+      padding 0
+      width 40px
+      height 40px
+      font-size 0
+      border-radius 0 20px 20px
+
+      &:before
+        content ""
+        position absolute
+        left 50%
+        top 50%
+        width 16px
+        height 16px
+        margin -8px 0 0 -8px
+        background url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.75 15.5C1.75 15.5 0.5 15.5 0.5 14.25C0.5 13 1.75 9.25 8 9.25C14.25 9.25 15.5 13 15.5 14.25C15.5 15.5 14.25 15.5 14.25 15.5H1.75ZM8 8C8.99456 8 9.94839 7.60491 10.6517 6.90165C11.3549 6.19839 11.75 5.24456 11.75 4.25C11.75 3.25544 11.3549 2.30161 10.6517 1.59835C9.94839 0.895088 8.99456 0.5 8 0.5C7.00544 0.5 6.05161 0.895088 5.34835 1.59835C4.64509 2.30161 4.25 3.25544 4.25 4.25C4.25 5.24456 4.64509 6.19839 5.34835 6.90165C6.05161 7.60491 7.00544 8 8 8Z' fill='white'/%3E%3C/svg%3E%0A")
+    @media (min-width: $tablet)
+      flex 0 0 auto
+
+      .site-btn
+        width auto
+        height auto
+        font-size 16px
+        padding 12px 32px
+        font-weight 400
+
+        &:before
+          display none
+
+  &__spec-page
+    flex 0 0 24px
+    margin-right 22px
+
+    a
+      width 24px
+      height 24px
+      display inline-block
+      text-decoration none
+      background url("data:image/svg+xml,%3Csvg width='34' height='22' viewBox='0 0 34 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 0.866211C10.5039 0.866211 4.61297 4.42027 0.266032 10.193C-0.0886775 10.6659 -0.0886775 11.3267 0.266032 11.7996C4.61297 17.5793 10.5039 21.1334 17 21.1334C23.4961 21.1334 29.387 17.5793 33.734 11.8066C34.0887 11.3336 34.0887 10.6729 33.734 10.2C29.387 4.42027 23.4961 0.866211 17 0.866211ZM17.466 18.1357C13.1538 18.407 9.59282 14.8529 9.86407 10.5338C10.0866 6.97279 12.973 4.08642 16.534 3.86386C20.8462 3.59261 24.4072 7.14666 24.1359 11.4658C23.9064 15.0198 21.02 17.9062 17.466 18.1357ZM17.2504 14.839C14.9274 14.9851 13.0078 13.0724 13.1608 10.7494C13.279 8.8298 14.837 7.27881 16.7566 7.15362C19.0796 7.00756 20.9992 8.92021 20.8462 11.2432C20.721 13.1698 19.163 14.7208 17.2504 14.839Z' fill='white'/%3E%3C/svg%3E%0A") 50% 50% no-repeat
+      background-size contain
+
+    @media (min-width: $desc)
+      margin-right 44px
+      flex 0 0 34px
+
+      a
+        width 34px
+
+  &__language
+    position relative
+    padding-right 15px
+    margin-right 20px
+
+    &:before
+      content ""
+      position absolute
+      right 0
+      top 50%
+      border-style solid
+      border 5px 3px 0 3px
+      border-color #fff transparent transparent
+
+    &-body
+      position absolute
+      left 0
+      top 100%
+      right 0
+      background $color1
+      padding 5px 0 1px 10px
+      display none
+
+    &-title
+      text-decoration none
+      font-size 16px
+      font-weight 600
+      letter-spacing 0.08em
+      line-height 1
+      color #fff
+      text-transform uppercase
+      padding 0 0 0 10px
+      min-width 47px
+      cursor pointer
+
+    &-item
+      display block
+      text-decoration none
+      margin-bottom 5px
+      font-size 16px
+      font-weight 600
+      letter-spacing 0.08em
+      line-height 1
+      color #fff
+      text-transform uppercase
+
+      &.active
+        display none
+
+    @media (min-width: $desc)
+      margin-right 36px
+
+  &__contacts
+    flex 1 1 0
+    display flex
+    align-items center
+    justify-content center
+    margin-right 20px
+
+    @media (min-width: $desc)
+      flex 0 0 auto
+
+      &-item
+        font-size 18px
+
+      &-title
+        font-size 18px
+
+  &__phone
+    flex 0 0 auto
+    font-size 18px
+    color #fff
+    font-weight 600
+    letter-spacing 0.08em
+    margin-right 40px
+    @media (min-width: $desc)
+      margin-right 65px
+
+  &__mail
+    flex 0 0 auto
+    a
+      color #9681F2
+      font-size 18px
+      font-weight 600
+      letter-spacing 0.08em
+
+  &__dop-logo
+    display none
+    @media (min-width: $desc)
+      display block
+      flex 1 0 176px
+      text-align right
