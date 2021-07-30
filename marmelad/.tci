@@ -1,1 +1,1 @@
-cb partners-block -t html,styl
+cb popup-form -t html,styl,js
