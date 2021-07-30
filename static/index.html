@@ -147,7 +147,7 @@
 					</div>
 				</div>
 				<div class="hero-block__button">
-					<a href="#" class="site-btn site-btn--1">Участвовать</a>
+					<a href="#" class="site-btn site-btn--1" data-remodal-target="sign_up">Участвовать</a>
 				</div>
 			</div>
 		</div>
@@ -309,7 +309,7 @@
         <div class="partners-block__inner">
             <div class="partners-block__head">
                 <h2 class="partners-block__title h2">Партнеры</h2>
-                <button class="partners-block__btn-sign-up site-btn site-btn--1" type="button">Стать партнером</button>
+                <button class="partners-block__btn-sign-up site-btn site-btn--1" data-remodal-target="partners" type="button">Стать партнером</button>
             </div>
             <!-- <div elem="rows">
                 <div elem="row">
@@ -385,7 +385,7 @@
         <div class="sign-up-block__inner">
             <div class="sign-up-block__content site-width">
                 <h2 class="sign-up-block__title h2">Стать участником</h2>
-                <button class="sign-up-block__btn-sign-up site-btn site-btn--1" type="button">Зарегистрироваться</button>
+                <button class="sign-up-block__btn-sign-up site-btn site-btn--1" data-remodal-target="sign_up" type="button">Зарегистрироваться</button>
             </div>
         </div>
     </div>
@@ -513,12 +513,128 @@
 </div><!-- mobile-box -->
 
 
-        <div class="popup-form">
+        <div class="popup-form remodal" data-remodal-id="sign_up">
+    <button class="popup-form__btn-close remodal-close" data-remodal-action="close" type="button"></button>
     <div class="popup-form__section">
-        <div class="popup-form__inner">
-
-        </div>
+        <form class="popup-form__form">
+            <div class="popup-form__title">
+                Отправить заявку
+                на участие
+            </div>
+            <div class="popup-form__groups">
+                <div class="popup-form__group">
+                    <div class="popup-form__name">ФИО</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Иванов Анатолий Иванович">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Организация</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Какую организацию Вы представляете?">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">E-mail</div>
+                    <div class="popup-form__input">
+                        <input type="email" placeholder="info@gmail.com">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Телефон</div>
+                    <div class="popup-form__input">
+                        <input type="tel" placeholder="+7">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-form__bottom">
+                <div class="popup-form__warning">
+                    <i></i>
+                    <span>
+                        Заполните все обязательные поля
+                    </span>
+                </div>
+                <div class="popup-form__user-agreement">
+                    <label class="popup-form__label">
+                        <input type="checkbox" checked="">
+                        <span>
+                            Я подтверждаю свое согласие с условиями <a href="#">Пользовательского соглашения</a> и <a href="#">Договором оказания услуг</a> по организации
+                            мероприятия и <a href="#">политикой возвратов</a> 
+                        </span>
+                    </label>
+                </div>
+                <button class="popup-form__btn-send site-btn site-btn--1" type="submit">отправить</button>
+            </div>
+        </form>
     </div>
+    <div class="popup-success">
+        <div class="popup-success__section">
+            <div class="popup-success__desc">
+                <strong>Спасибо! Вышлем подтверждение на электронку</strong>
+            </div>
+        </div>
+    </div><!-- b:popup-success -->
+</div><!-- popup-form -->
+        <div class="popup-form remodal" data-remodal-id="partners">
+    <button class="popup-form__btn-close remodal-close" data-remodal-action="close" type="button"></button>
+    <div class="popup-form__section">
+        <form class="popup-form__form">
+            <div class="popup-form__title">
+                Стать партнером
+            </div>
+            <div class="popup-form__groups">
+                <div class="popup-form__group">
+                    <div class="popup-form__name">ФИО</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Иванов Анатолий Иванович">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Организация</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Какую организацию Вы представляете?">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">E-mail</div>
+                    <div class="popup-form__input">
+                        <input type="email" placeholder="info@gmail.com">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Телефон</div>
+                    <div class="popup-form__input">
+                        <input type="tel" placeholder="+7">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-form__bottom">
+                <div class="popup-form__warning">
+                    <i></i>
+                    <span>
+                        Заполните все обязательные поля
+                    </span>
+                </div>
+                <div class="popup-form__user-agreement">
+                    <label class="popup-form__label">
+                        <input type="checkbox" checked="">
+                        <span>
+                            Я подтверждаю свое согласие с условиями <a href="#">Пользовательского соглашения</a> и <a href="#">Договором оказания услуг</a> по организации
+                            мероприятия и <a href="#">политикой возвратов</a>
+                        </span>
+                    </label>
+                </div>
+                <button class="popup-form__btn-send site-btn site-btn--1" type="submit">отправить</button>
+            </div>
+        </form>
+    </div>
+    <div class="popup-success">
+        <div class="popup-success__section">
+            <div class="popup-success__desc">
+                <strong>Спасибо! Вышлем подтверждение на электронку</strong>
+            </div>
+        </div>
+    </div><!-- b:popup-success -->
 </div><!-- popup-form -->
 
         <script src="js/vendors/jquery-3.4.1.min.js"></script>

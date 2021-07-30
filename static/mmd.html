@@ -276,11 +276,53 @@
 </div><!-- mobile-box -->
 
 
-        <div class="popup-form">
+        <div class="popup-form remodal" data-remodal-id="sign_up">
+    <button class="popup-form__btn-close remodal-close" data-remodal-action="close" type="button"></button>
     <div class="popup-form__section">
-        <div class="popup-form__inner">
-
-        </div>
+        <form class="popup-form__form">
+            <div class="popup-form__title">
+                Отправить заявку
+                на участие
+            </div>
+            <div class="popup-form__groups">
+                <div class="popup-form__group">
+                    <div class="popup-form__name">ФИО</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Иванов Анатолий Иванович">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Организация</div>
+                    <div class="popup-form__input">
+                        <input type="text" placeholder="Какую организацию Вы представляете?">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">E-mail</div>
+                    <div class="popup-form__input">
+                        <input type="email" placeholder="info@gmail.com">
+                    </div>
+                </div>
+                <div class="popup-form__group">
+                    <div class="popup-form__name">Телефон</div>
+                    <div class="popup-form__input">
+                        <input type="tel" placeholder="+7">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-form__bottom">
+                <div class="popup-form__user-agreement">
+                    <label class="popup-form__label">
+                        <input type="checkbox" checked="">
+                        <span>
+                            Я подтверждаю свое согласие с условиями <a href="#">Пользовательского соглашения</a> и <a href="#">Договором оказания услуг</a> по организации
+                            мероприятия и <a href="#">политикой возвратов</a> 
+                        </span>
+                    </label>
+                </div>
+                <button class="popup-form__btn-send site-btn site-btn--1" type="submit">отправить</button>
+            </div>
+        </form>
     </div>
 </div><!-- popup-form -->
 

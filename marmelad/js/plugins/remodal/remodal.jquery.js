@@ -1,12 +1,3 @@
-/*
- *  Remodal - v1.1.1
- *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
- *  http://vodkabears.github.io/remodal/
- *
- *  Made by Ilya Makarov
- *  Under MIT License
- */
-
 !(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], function($) {
@@ -15,7 +6,7 @@
   } else if (typeof exports === 'object') {
     factory(root, require('jquery'));
   } else {
-    factory(root, root.jQuery);
+    factory(root, root.jQuery || root.Zepto);
   }
 })(this, function(global, $) {
 
@@ -155,21 +146,33 @@
     if (
       IS_ANIMATION &&
       $elem.css('animation-name') === 'none' &&
-      $elem.css('-webkit-animation-name') === 'none'
+      $elem.css('-webkit-animation-name') === 'none' &&
+      $elem.css('-moz-animation-name') === 'none' &&
+      $elem.css('-o-animation-name') === 'none' &&
+      $elem.css('-ms-animation-name') === 'none'
     ) {
       return 0;
     }
 
     var duration = $elem.css('animation-duration') ||
       $elem.css('-webkit-animation-duration') ||
+      $elem.css('-moz-animation-duration') ||
+      $elem.css('-o-animation-duration') ||
+      $elem.css('-ms-animation-duration') ||
       '0s';
 
     var delay = $elem.css('animation-delay') ||
       $elem.css('-webkit-animation-delay') ||
+      $elem.css('-moz-animation-delay') ||
+      $elem.css('-o-animation-delay') ||
+      $elem.css('-ms-animation-delay') ||
       '0s';
 
     var iterationCount = $elem.css('animation-iteration-count') ||
       $elem.css('-webkit-animation-iteration-count') ||
+      $elem.css('-moz-animation-iteration-count') ||
+      $elem.css('-o-animation-iteration-count') ||
+      $elem.css('-ms-animation-iteration-count') ||
       '1';
 
     var max;
@@ -391,8 +394,7 @@
     });
 
     instance.$bg.removeClass(instance.settings.modifier);
-    // instance.$overlay.removeClass(instance.settings.modifier).hide();
-    instance.$overlay.addClass('is-multiple');
+    instance.$overlay.removeClass(instance.settings.modifier).hide();
     instance.$wrapper.hide();
     unlockScreen();
     setState(instance, STATES.CLOSED, true);
