@@ -13,24 +13,12 @@ module.exports = {
   },
   menu: [
     {
-      name: "Новости",
-      href: "#block1"
-    },
-    {
       name: "Основные треки",
       href: "#block2"
     },
     {
-      name: "Программа форума",
-      href: "#block3"
-    },
-    {
       name: "О форуме",
       href: "#block4"
-    },
-    {
-      name: "Спикеры",
-      href: "#block5"
     },
     {
       name: "Билеты",
