@@ -83,7 +83,7 @@ $(function () {
       return false;
     }
 
-    var offsetTop = $(id).offset().top;
+    var offsetTop = $(id).offset().top + 1;
     $('html').removeClass('is-locked');
     $('.mobile-box, .app-header__burger').removeClass('opened');
     $('html, body').animate({
@@ -105,7 +105,12 @@ $(function () {
   $('.faq-block__item-title, .faq-block__item-icon').on('click', function (e) {
     e.preventDefault();
     $(this).closest('.faq-block__item').toggleClass('opened');
-    $(this).closest('.faq-block__item').find('.faq-block__item-body').slideToggle(400);
+
+    if ($(this).closest('.faq-block__item').hasClass('opened')) {
+      $(this).closest('.faq-block__item').find('.faq-block__item-body').slideToggle(400);
+    } else {
+      $(this).closest('.faq-block__item').find('.faq-block__item-body').css('display', 'none');
+    }
   });
 
   function yaMapInit() {

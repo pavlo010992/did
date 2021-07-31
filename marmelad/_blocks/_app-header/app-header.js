@@ -8,7 +8,7 @@ $('.navigation-link').on('click', function(e){
     return false;
   }
 
-  var offsetTop = $(id).offset().top;
+  var offsetTop = $(id).offset().top +1;
 
   $('html').removeClass('is-locked');
   $('.mobile-box, .app-header__burger').removeClass('opened');

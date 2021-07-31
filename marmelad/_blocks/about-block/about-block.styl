@@ -8,6 +8,27 @@
   position relative
   z-index 1
 
+  &__bg
+    display none
+    @media (min-width: $desc)
+      display block
+      position absolute
+      right 0
+      left 50%
+      top 0
+      bottom 0
+      margin-left 250px
+
+      &:before
+        content ""
+        position absolute
+        right 0
+        top 0
+        bottom 0
+        width 100%
+        max-width 450px
+        background url(../img/about-bg.svg) 0 0 no-repeat
+
   @media (min-width: $desc)
     margin-top 0
     padding-bottom 110px
@@ -21,16 +42,6 @@
 
       a
         font-weight 500
-
-      &:before
-        content ""
-        position absolute
-        left 100%
-        right -9999px
-        top 0
-        bottom 0
-        margin-left -180px
-        background url(../img/about-bg.svg) 0 0 no-repeat
 
   &__description
     font-weight 600
