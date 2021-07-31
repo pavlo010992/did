@@ -2030,8 +2030,6 @@ html.is-locked {
   .contacts-block__content {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
   }
   .contacts-block__address,
   .contacts-block__email,
