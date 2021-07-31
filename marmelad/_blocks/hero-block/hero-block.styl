@@ -3,17 +3,18 @@
   background $color1
   border-bottom 1px solid rgba(255,255,255, .1)
   position relative
+  overflow hidden
 
   @media (min-width: $desc)
     &:before
       content ""
       position absolute
-      right 0
+      left 50%
+      right -9999px
       bottom 0
+      margin-left 377px
       height 484px
-      left 74%
-      background url(../img/hero-bg.svg) 100% 100% no-repeat
-      background-size contain
+      background url(../img/hero-bg.svg) 0 100% no-repeat
 
   &__inner
     padding-top 40px

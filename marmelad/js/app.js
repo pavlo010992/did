@@ -73,4 +73,5 @@ $(function() {
   $.exists = (selector) => $(selector).length > 0;
 
   //=require ../_blocks/**/*.js
+
 });
