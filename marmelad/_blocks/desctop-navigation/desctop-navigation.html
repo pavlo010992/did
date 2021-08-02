@@ -1,0 +1,11 @@
+<div block="desctop-navigation">
+	<div elem="navigation">
+		<ul>
+			{% for item in menu %}
+				<li>
+					<a href="{{item.href}}" class="navigation-link">{{item.name}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div><!-- desctop-navigation -->

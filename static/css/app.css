@@ -165,6 +165,23 @@ template {
   width: inherit;
   height: inherit;
 }
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
   min-width: 0;
   min-height: 0;
@@ -579,7 +596,6 @@ a.site-btn--1.disabled,
 .app-header__language {
   position: relative;
   padding-right: 15px;
-  margin-right: 20px;
 }
 .app-header__language:before {
   content: "";
@@ -775,6 +791,32 @@ html.is-locked {
 .contacts-block__btn-subscribe {
   width: 100%;
 }
+.remodal-is-locked .desctop-navigation__navigation {
+  margin-right: 8.5px;
+}
+.desctop-navigation {
+  display: none;
+}
+.desctop-navigation__navigation {
+  max-width: 240px;
+  margin-left: auto;
+}
+.desctop-navigation__navigation ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.desctop-navigation__navigation ul li {
+  margin: 0 0 23px;
+}
+.desctop-navigation__navigation ul li a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+.desctop-navigation__navigation ul li a:hover {
+  text-decoration: underline;
+}
 .faq-block {
   -ms-flex: none;
       flex: none;
@@ -794,9 +836,6 @@ html.is-locked {
 .faq-block__item.opened .faq-block__item-icon {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-}
-.faq-block__item.opened .faq-block__item-body {
-  display: block;
 }
 .faq-block__item:last-child {
   margin-bottom: 0;
@@ -870,12 +909,8 @@ html.is-locked {
   background: #12152a;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   position: relative;
-}
-.hero-block__big-wrapper {
-  position: relative;
-  max-width: 1580px;
-  margin: 0 auto;
-  padding: 0 20px;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 .hero-block__inner {
   padding-top: 40px;
@@ -927,29 +962,6 @@ html.is-locked {
 .hero-block__button .site-btn {
   min-width: 186px;
   font-weight: 500;
-}
-.hero-block__navigation {
-  position: absolute;
-  left: 20px;
-  top: 120px;
-  max-width: 140px;
-  display: none;
-}
-.hero-block__navigation ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.hero-block__navigation ul li {
-  margin: 0 0 23px;
-}
-.hero-block__navigation ul li a {
-  font-size: 14px;
-  color: #fff;
-  text-decoration: none;
-}
-.hero-block__navigation ul li a:hover {
-  text-decoration: underline;
 }
 .map-block {
   overflow: hidden;
@@ -1680,6 +1692,8 @@ html.is-locked {
   font-size: 36px;
   line-height: 1;
   font-weight: bold;
+  -webkit-animation: pulse 3s infinite;
+          animation: pulse 3s infinite;
 }
 .tickets-thumbs__timer-body .time-body {
   position: relative;
@@ -1696,6 +1710,40 @@ html.is-locked {
   font-weight: 400;
   line-height: 1;
   opacity: 0.5;
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @media (min-width: 767px) {
   .site-width {
@@ -1982,8 +2030,6 @@ html.is-locked {
   .contacts-block__content {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
   }
   .contacts-block__address,
   .contacts-block__email,
@@ -1995,10 +2041,16 @@ html.is-locked {
   }
   .faq-block__item {
     padding-right: 60px;
-  }
-  .faq-block__item.opened {
     display: -ms-flexbox;
     display: flex;
+  }
+  .faq-block__item-title {
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+  }
+  .faq-block__item-body {
+    -ms-flex: 0 0;
+        flex: 0 0;
   }
   .faq-block__item.opened .faq-block__item-title {
     -ms-flex: 0 0 48%;
@@ -2018,12 +2070,12 @@ html.is-locked {
   .hero-block:before {
     content: "";
     position: absolute;
-    right: 0;
+    left: 50%;
+    right: -9999px;
     bottom: 0;
+    margin-left: 377px;
     height: 484px;
-    left: 74%;
-    background: url("../img/hero-bg.svg") 100% 100% no-repeat;
-    background-size: contain;
+    background: url("../img/hero-bg.svg") 0 100% no-repeat;
   }
   .hero-block__inner {
     padding-top: 120px;
@@ -2157,7 +2209,8 @@ html.is-locked {
   .sign-up-block__inner:before {
     width: 1573px;
     height: 799px;
-    right: 89%;
+    right: 50%;
+    margin-right: 780px;
     bottom: -325px;
     left: auto;
   }
@@ -2166,8 +2219,20 @@ html.is-locked {
   .app-header__burger {
     display: none;
   }
-  .hero-block__navigation {
+  .desctop-navigation {
     display: block;
+    position: fixed;
+    left: 0;
+    right: 50%;
+    top: 0;
+    bottom: 0;
+    margin-right: 530px;
+    z-index: 2;
+    padding: 200px 0 20px 20px;
+    max-height: 100%;
+    overflow: auto;
+    mix-blend-mode: difference;
+    -webkit-overflow-scrolling: touch;
   }
   .mobile-box {
     display: none;

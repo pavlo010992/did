@@ -3,23 +3,18 @@
   background $color1
   border-bottom 1px solid rgba(255,255,255, .1)
   position relative
+  overflow hidden
 
   @media (min-width: $desc)
     &:before
       content ""
       position absolute
-      right 0
+      left 50%
+      right -9999px
       bottom 0
+      margin-left 377px
       height 484px
-      left 74%
-      background url(../img/hero-bg.svg) 100% 100% no-repeat
-      background-size contain
-
-  &__big-wrapper
-    position relative
-    max-width 1580px
-    margin 0 auto
-    padding 0 20px
+      background url(../img/hero-bg.svg) 0 100% no-repeat
 
   &__inner
     padding-top 40px
@@ -114,27 +109,3 @@
         font-size 20px
         padding 25px 20px
         border-radius 0px 35px 35px 35px
-
-  &__navigation
-    position absolute
-    left 20px
-    top 120px
-    max-width 140px
-    display none
-
-    @media (min-width: 1360px)
-      display block
-    ul
-      padding 0
-      margin 0
-      list-style none
-
-      li
-        margin 0 0 23px
-        a
-          font-size 14px
-          color #fff
-          text-decoration none
-
-          &:hover
-            text-decoration underline

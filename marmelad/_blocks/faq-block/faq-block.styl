@@ -22,14 +22,22 @@
           &-icon
             transform rotate(45deg)
 
-          &-body
-            display block
+          // &-body
+          //   display block
 
     @media (min-width: $desc)
       padding-right 60px
+      display flex
+
+      &-title
+        flex 0 0 100%
+        // transition all .4s ease
+
+      &-body
+        flex 0 0 0
+        // transition all .4s ease
 
       &.opened
-        display flex
 
         & ^[0]
           &__item
