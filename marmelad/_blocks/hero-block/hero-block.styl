@@ -6,6 +6,7 @@
   overflow hidden
 
   @media (min-width: $desc)
+    border none
     &:before
       content ""
       position absolute
@@ -21,6 +22,9 @@
     padding-bottom 77px
     position relative
     @media (min-width: $desc)
+      padding-top 40px
+      padding-bottom 140px
+    @media (min-width: 1301px)
       padding-top 120px
       padding-bottom 160px
 
@@ -30,6 +34,8 @@
       margin-bottom 90px
       display flex
     @media (min-width: $desc)
+      margin-bottom 40px
+    @media (min-width: 1301px)
       margin-bottom 130px
 
   &__image

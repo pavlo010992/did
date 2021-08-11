@@ -2067,6 +2067,9 @@ html.is-locked {
   .faq-block__item-body {
     padding-top: 0;
   }
+  .hero-block {
+    border: none;
+  }
   .hero-block:before {
     content: "";
     position: absolute;
@@ -2078,11 +2081,11 @@ html.is-locked {
     background: url("../img/hero-bg.svg") 0 100% no-repeat;
   }
   .hero-block__inner {
-    padding-top: 120px;
-    padding-bottom: 160px;
+    padding-top: 40px;
+    padding-bottom: 140px;
   }
   .hero-block__head {
-    margin-bottom: 130px;
+    margin-bottom: 40px;
   }
   .hero-block__image {
     margin-right: 97px;
@@ -2213,6 +2216,15 @@ html.is-locked {
     margin-right: 780px;
     bottom: -325px;
     left: auto;
+  }
+}
+@media (min-width: 1301px) {
+  .hero-block__inner {
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+  .hero-block__head {
+    margin-bottom: 130px;
   }
 }
 @media (min-width: 1360px) {
