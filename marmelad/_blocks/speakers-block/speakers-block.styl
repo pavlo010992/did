@@ -12,16 +12,98 @@
         text-align center
         margin-bottom 45px  
 
+        @media (min-width $desc)
+            margin-bottom 60px
+            text-align left
+
     &__items
         display flex
         justify-content center
         flex-wrap wrap
+        margin-left -20px
+    
+        @media (min-width 1280px)
+            overflow hidden
+            padding-bottom 250px
+            position relative
+
+        &:after
+            content ''
+            position absolute
+            top 35px
+            left 350px
+            width 95px
+            height 100px
+            background-image url('../img/dots-icon.svg')    
+            background-repeat no-repeat
+            background-position 0 0
+            background-size auto
 
     &__item
         display flex
         flex-direction column
-        justify-content center    
+        padding-left 20px
+        margin-bottom 60px
 
+        &:nth-child(2n)
+
+            @media (min-width 1280px)
+                transform translateY(250px)
+
+        &:nth-child(4n)
+
+            & ^[0]
+
+                &__bio-text
+                    @media (min-width $desc)
+                        transform scale(-1, 1)
+                        left -345px
+
+                    @media (min-width $desc) and (max-width 1059px)
+                        transform none
+                        left -95px    
+
+                    span
+                        @media (min-width $desc)
+                            display block
+                            transform scale(-1, 1)
+
+                        @media (min-width $desc) and (max-width 1059px)
+                            transform none    
+
+        &:nth-child(3n)
+            & ^[0]
+
+                &__bio-text
+                    @media (min-width $desc) and (max-width 1059px)
+                        transform scale(-1, 1)
+                        left -345px
+
+                    span
+                        @media (min-width $desc) and (max-width 1059px)
+                            display block
+                            transform scale(-1, 1)        
+
+        &--not-back-plate
+
+            & ^[0]
+
+                &__pic
+                    &:after
+                        display none
+
+                &__content
+                    margin-top 0    
+                    padding-left 25px
+
+        &--dark-back-plate
+
+            & ^[0]
+
+                &__pic
+                    &:after
+                        background-image url('../img/back-plate-dark-pic.svg')   
+        
     &__body
         width 240px
 
@@ -48,28 +130,55 @@
         position absolute
         top 35px
         right 0
-        z-index 2      
+        z-index 5      
 
     &__bio-icon
         width 42px
         height 42px
         background-image url('../img/more-text-icon.svg')
         display block
+        position absolute
+        top 0
+        right 0
+        &:hover
+
+            + .speakers-block__bio-text
+                opacity 1
+                visibility visible
 
     &__bio-text
         font-size 14px
         line-height 1.3
-        background-image url('../img/bio-back-plate.svg')
-        background-repeat no-repeat
-        background-size cover
-        background-position 0 0
-        width 395px
-        height 220px
-        padding 50px 55px 30px 120px
+        background-color #fff
+        width 260px
+        padding 60px 25px 25px
+        border-radius 25px
+        box-shadow 0px 6px 40px rgba(48, 34, 107, 0.29)
+        top -15px
+        right -15px
         position absolute
-        top -50px
-        left -50px
         z-index -1
+        opacity 0
+        visibility hidden
+        transition opacity .3s, ease .3s
+
+        &:hover
+            opacity 1
+            visibility visible
+        
+        @media(min-width: $desc)
+            background-image url('../img/bio-back-plate.svg')
+            background-repeat no-repeat
+            background-size cover
+            background-position 0 0
+            width 395px
+            height 245px
+            padding 60px 60px 30px 115px
+            top -50px
+            right auto
+            left -95px
+            background-color transparent
+            box-shadow none
 
     &__img
         width 190px
@@ -89,6 +198,9 @@
         padding-left 25px   
         margin-top 30px        
 
+        @media (min-width $desc)
+            padding-left 0
+
     &__name
         font-size 30px
         color #000
@@ -103,6 +215,9 @@
 
     &__bottom
         margin-top 60px    
+
+        @media (min-width $desc)
+            margin-top 15px
 
     &__btn-show-more
         width 250px    

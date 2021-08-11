@@ -1493,14 +1493,37 @@ html.is-locked {
       justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-left: -20px;
+}
+.speakers-block__items:after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 350px;
+  width: 95px;
+  height: 100px;
+  background-image: url("../img/dots-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto;
 }
 .speakers-block__item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
+  padding-left: 20px;
+  margin-bottom: 60px;
+}
+.speakers-block__item--not-back-plate .speakers-block__pic:after {
+  display: none;
+}
+.speakers-block__item--not-back-plate .speakers-block__content {
+  margin-top: 0;
+  padding-left: 25px;
+}
+.speakers-block__item--dark-back-plate .speakers-block__pic:after {
+  background-image: url("../img/back-plate-dark-pic.svg");
 }
 .speakers-block__body {
   width: 240px;
@@ -1528,28 +1551,40 @@ html.is-locked {
   position: absolute;
   top: 35px;
   right: 0;
-  z-index: 2;
+  z-index: 5;
 }
 .speakers-block__bio-icon {
   width: 42px;
   height: 42px;
   background-image: url("../img/more-text-icon.svg");
   display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.speakers-block__bio-icon:hover + .speakers-block__bio-text {
+  opacity: 1;
+  visibility: visible;
 }
 .speakers-block__bio-text {
   font-size: 14px;
   line-height: 1.3;
-  background-image: url("../img/bio-back-plate.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
-  width: 395px;
-  height: 220px;
-  padding: 50px 55px 30px 120px;
+  background-color: #fff;
+  width: 260px;
+  padding: 60px 25px 25px;
+  border-radius: 25px;
+  box-shadow: 0px 6px 40px rgba(48,34,107,0.29);
+  top: -15px;
+  right: -15px;
   position: absolute;
-  top: -50px;
-  left: -50px;
   z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, ease 0.3s;
+}
+.speakers-block__bio-text:hover {
+  opacity: 1;
+  visibility: visible;
 }
 .speakers-block__img {
   width: 190px;
@@ -2188,6 +2223,40 @@ html.is-locked {
     padding: 40px 50px;
     border-radius: 0px 50px 50px 50px;
   }
+  .speakers-block__title {
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  .speakers-block__item:nth-child(4n) .speakers-block__bio-text {
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+    left: -345px;
+  }
+  .speakers-block__item:nth-child(4n) .speakers-block__bio-text span {
+    display: block;
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+  }
+  .speakers-block__bio-text {
+    background-image: url("../img/bio-back-plate.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    width: 395px;
+    height: 245px;
+    padding: 60px 60px 30px 115px;
+    top: -50px;
+    right: auto;
+    left: -95px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .speakers-block__content {
+    padding-left: 0;
+  }
+  .speakers-block__bottom {
+    margin-top: 15px;
+  }
   .tickets-block {
     padding-top: 100px;
     margin-top: 0;
@@ -2208,6 +2277,27 @@ html.is-locked {
     margin-right: 0;
   }
 }
+@media (min-width: 1023px) and (max-width: 1059px) {
+  .speakers-block__item:nth-child(4n) .speakers-block__bio-text {
+    -webkit-transform: none;
+            transform: none;
+    left: -95px;
+  }
+  .speakers-block__item:nth-child(4n) .speakers-block__bio-text span {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .speakers-block__item:nth-child(3n) .speakers-block__bio-text {
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+    left: -345px;
+  }
+  .speakers-block__item:nth-child(3n) .speakers-block__bio-text span {
+    display: block;
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+  }
+}
 @media (min-width: 1280px) {
   .sign-up-block__inner:before {
     width: 1573px;
@@ -2216,6 +2306,16 @@ html.is-locked {
     margin-right: 780px;
     bottom: -325px;
     left: auto;
+  }
+  .speakers-block__items {
+    overflow: hidden;
+    padding-bottom: 250px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+  .speakers-block__item:nth-child(2n) {
+    -webkit-transform: translateY(250px);
+            transform: translateY(250px);
   }
 }
 @media (min-width: 1301px) {
